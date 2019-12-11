@@ -112,9 +112,9 @@ public class MainController  {
 	  }
 	  
 	  
-	  @RequestMapping(value="/editM")
+	/*  @RequestMapping(value="/editM")
 			public String edit(String codeM, Model model) {
-		  	Monument monument = IprojetDao.getListMonuments(codeM);
+		  	Monument monument = (Monument) IprojetDao.getListMonuments(codeM);
 				model.addAttribute("editM",monument); 
 				model.addAttribute("monument",monument);
 				model.addAttribute("monument",IprojetDao.getListMonuments());
@@ -129,6 +129,7 @@ public class MainController  {
 	 		 }
 	 		 return("redirect:/monuments");
 		  }
+		  */
 		 
 	  ////////////////////////rechercher //////////////////////::
 	
