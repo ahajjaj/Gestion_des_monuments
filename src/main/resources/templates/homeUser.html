@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Bienvenu sur notre site</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script><style>
+body {
+    background-image: url("https://st3.idealista.it/cms/archivie/styles/idcms_social_tablet/public/2018-10/media/image/italia.jpg?fv=xwog1qzD&itok=5p9ClRKh");  
+background-attachment:fixed;
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Bienvenu sur notre site</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Accueil</a></li>
+      <li><a href="https://voyages.michelin.fr/europe/france/languedoc-roussillon/herault/montpellier/que-visiter" target="_blank">Voyagiste</a></li>
+      <li><a href="homeUser">Touriste</a></li>
+    </ul>
+    <div>
+<form th:action="@{/rechercher}" method="get" >
+<input type="text" name="numCelebrite" class="form-control">
+<button class="btn btn-lg btn-primary" name="Submit" value="Rechercher" type="Submit" th:text="Rechercher" style="margin-right:10px;"></button>
+</form>
+</div>
+
+  </div>
+</nav>
+</br></br>
+
+<div class=row>
+ <div class="col-md-2 col-md-offset-5">  
+<form th:action="@{/touriste}" method="get" >
+<button class="btn btn-large btn-info"  th:text="Voir_les_Célebrités" style="width:90%;"></button>
+</form>
+</br></br>
+
+<form th:action="@{/monumentsUser}" method="get" >
+<button class="btn btn-large btn-info"  th:text="Voir_les_Monuments" style="width:90%;"></button>
+</form>
+
+ 
+ </div>
+</div>
+ 
+
+</body>
+</html>

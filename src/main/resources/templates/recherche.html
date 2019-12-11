@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body style="background-color:#ededed;">
+<div style="background-color:#337ab7;height:50px;"></div>
+<div class="container-fluid">
+<div class="row col-lg-4 col-lg-offset-4" style="margin-top: 80px;background-color:#fff;padding:20px;border:solid 1px #ddd;">
+<h1>Chercher une célibrité</h1>
+
+<div>
+<form th:action="@{/rechercher}" method="get" >
+<p> NumCelebrite: <input type="text" name="numCelebrite" class="form-control"></p>
+<button class="btn btn-lg btn-primary" name="Submit" value="Rechercher" type="Submit" th:text="Rechercher" style="margin-right:10px;"></button>
+</form>
+</div>
+
+<div th:if="${celebrite}">
+   <p th:text="${celebrite.nom}"></p>
+   <p th:text="${celebrite.numCelebrite}"></p>
+</div>
+</div>
+</div>
+</body>
+</html>

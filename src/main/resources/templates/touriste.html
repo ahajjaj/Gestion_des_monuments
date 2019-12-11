@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color:#ededed;">
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="login">Bienvenu sur notre site</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Accueil</a></li>
+      <li><a href="https://voyages.michelin.fr/europe/france/languedoc-roussillon/herault/montpellier/que-visiter" target="_blank">Voyagiste</a></li>
+      <li><a href="homeUser">Touriste</a></li>
+    </ul>
+    <div>
+<form th:action="@{/rechercher}" method="get" >
+<input type="text" name="numCelebrite" class="form-control">
+<button class="btn btn-lg btn-primary" name="Submit" value="Rechercher" type="Submit" th:text="Rechercher" style="margin-right:10px;"></button>
+</form>
+</div>
+
+  </div>
+</nav>
+
+
+</br></br></br>
+
+
+<h2 style="border-radius: 20px 20px 20px 20px; background-color: rgba(255,255,255, 0.6); padding-left:20px;">Liste des Célébrités</h2>
+</br></br>
+
+<table class="table" border="4" width="100%" bordercolor="#808080" frame="hsides" rules="rows">
+<tr style="text-align:left; color: black;">
+	<th>Numero celebrite</th><th>Nom</th><th>Prenom</th><th>Nationalite</th><th>Epoque</th><th colspan="2"></th>
+</tr>
+<tbody>
+<tr th:each="celebrite:${ListCelebrite}">  
+  <td th:text="${celebrite.numCelebrite}"></td>
+   <td th:text="${celebrite.nom}"></td>
+    <td th:text="${celebrite.prenom}"></td>
+     <td th:text="${celebrite.nationalite}"></td>
+      <td th:text="${celebrite.epoque}"></td>
+      
+</tr>
+</tbody>
+</table>
+
+</body>
+</html>

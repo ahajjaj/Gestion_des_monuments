@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> 
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body style="background-color:#ededed;">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+        <a class="nav-link" href="home"> Retour </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="recherche">Rechercher </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="addcelebrite"> Ajouter </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+</br></br></br>
+
+
+<h2 style="border-radius: 20px 20px 20px 20px; background-color: rgba(255,255,255, 0.6); padding-left:20px;">Liste des Célébrités</h2>
+</br></br>
+
+<table class="table" border="4" width="100%" bordercolor="#808080" frame="hsides" rules="rows">
+<tr style="text-align:left; color: black;">
+	<th>Numero celebrite</th><th>Nom</th><th>Prenom</th><th>Nationalite</th><th>Epoque</th><th colspan="2"></th>
+</tr>
+<tbody>
+<tr th:each="celebrite:${ListCelebrite}">  
+  <td th:text="${celebrite.numCelebrite}"></td>
+   <td th:text="${celebrite.nom}"></td>
+    <td th:text="${celebrite.prenom}"></td>
+     <td th:text="${celebrite.nationalite}"></td>
+      <td th:text="${celebrite.epoque}"></td>
+       <td><a onclick="return confirm('vous allez supprimer une celebrite')" th:href="@{supprimer(numCelebrite=${celebrite.numCelebrite})}">Supprimer</a>
+       <td><a  th:href="@{edit(numCelebrite=${celebrite.numCelebrite})}">Modifier</a></td>  
+</tr>
+</tbody>
+</table>
+</body>
+</html>

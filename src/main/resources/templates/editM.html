@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+<h1>Modifier célibrité</h1>
+
+  <form action="#" th:action="@{/editM}" th:object="${editM}" method="post">
+
+<p> codeM: <input type="text" th:field="*{codeM}"></p>
+<p> nomM: <input type="text" th:field="*{nomM}"></p>
+<p> proprietaire: <input type="text" th:field="*{proprietaire}"></p>
+<p> typeMonument: <input type="text" th:field="*{typeMonument}"></p>
+<p> longitude: <input type="text" th:field="*{longitude}"></p>
+<p> latitude: <input type="text" th:field="*{latitude}"></p>
+<p>
+<input type="submit" value ="submit"/></p>
+
+ </form>
+ </body>
+</html>

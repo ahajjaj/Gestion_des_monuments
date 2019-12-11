@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+<title>Ajouter une célébrité</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+body {
+    background-image: url("https://st3.idealista.it/cms/archivie/styles/idcms_social_tablet/public/2018-10/media/image/italia.jpg?fv=xwog1qzD&itok=5p9ClRKh");  
+background-attachment:fixed;
+}
+</style>
+</head>
+<body style="background-color:#ededed;">
+<div style="background-color:#337ab7;height:50px;"></div>
+<div class="container-fluid">
+<div class="row col-lg-4 col-lg-offset-4" style="margin-top: 80px;background-color:#fff;padding:20px;border:solid 1px #ddd;">
+<h1>Ajouter une célébrité</h1>
+
+ <form action="#" th:action="@{/save}" th:object="${Ajoutcelebrite}" method="post">
+ <p> Numéro de Célebrité: <input type="text" th:field="*{numCelebrite}" class="form-control"></p>
+<p> Epoque: <input type="text" th:field="*{epoque}" class="form-control"></p>
+<p> Nationalite: <input type="text" th:field="*{nationalite}" class="form-control"></p>
+<p> Nom: <input type="text" th:field="*{nom}" class="form-control"></p>
+<p> Prenom: <input type="text" th:field="*{prenom}" class="form-control"></p>
+<button class="btn btn-lg btn-primary" name="Submit" value="Ajouter" type="Submit" th:text="Ajouter" style="margin-right:10px;"></button>
+
+ </form>
+ 	</div>
+	</div>
+ </body>
+</html>
