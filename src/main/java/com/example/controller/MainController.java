@@ -160,7 +160,7 @@ public class MainController  {
 	  ModelAndView modelAndView = new ModelAndView(); 
 	  //User user = new User(); 
 	  //modelAndView.addObject("user", user);
-	  modelAndView.setViewName("register"); // resources/template/register.html
+	  modelAndView.setViewName("register"); 
 	  return modelAndView; }
 	  
 	  
@@ -168,13 +168,13 @@ public class MainController  {
 	  @RequestMapping(value = "/home", method = RequestMethod.GET) public
 	  ModelAndView home() { 
 	  ModelAndView modelAndView = new ModelAndView();
-	  modelAndView.setViewName("home"); // resources/template/home.html 
+	  modelAndView.setViewName("home"); 
 	  return modelAndView; }
 	 
 	  @RequestMapping(value = "/homeUser", method = RequestMethod.GET) public
 	  ModelAndView homeUser() { 
 	  ModelAndView modelAndView = new ModelAndView();
-	  modelAndView.setViewName("homeUser"); // resources/template/home.html 
+	  modelAndView.setViewName("homeUser"); 
 	  return modelAndView; }
 
 }
